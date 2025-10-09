@@ -1,46 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GabMiel Website</title>
+  <title>GabMiel Landing Page</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <nav>
     <div class="nav-left">
-      <a href="/" class="nav-link" id="homeLink">Home</a>
-    </div>
-    <div class="nav-right">
-      <a href="/admin" class="nav-link" id="adminLink">Admin Login</a>
+      <a href="/" class="nav-link active">Home</a>
     </div>
   </nav>
-  <h1>My Personal Chat Site</h1>
 
-  <!-- Admin Topic Creation -->
   <section>
-    <h2>Create Topic (Admin Only)</h2>
-    <input id="topicTitle" placeholder="Topic Title" />
-    <textarea id="topicDesc" placeholder="Topic Description"></textarea>
-    <input id="adminPass" type="password" placeholder="Admin Password" />
-    <button onclick="createTopic()">Create Topic</button>
+    <h1>Welcome to GabMiel Chat</h1>
+    <p>This is the public landing page. Guests can explore topics and chat.</p>
+    <button onclick="window.location.href='https://gabmiel-github-io.onrender.com'">
+      Launch Chat Site
+    </button>
   </section>
-
-  <!-- Topic List -->
-  <section>
-    <h2>Available Topics</h2>
-    <ul id="topicList"></ul>
-  </section>
-
-  <!-- Chat Box -->
-  <section id="chatSection" style="display:none;">
-    <h2>Chat in: <span id="chatTopicTitle"></span></h2>
-    <input id="chatUsername" placeholder="Your Name" />
-    <textarea id="chatMessage" placeholder="Your Message"></textarea>
-    <button onclick="sendMessage()">Send Message</button>
-
-    <h3>Messages</h3>
-    <ul id="messageList"></ul>
-  </section>
-
-  <script src="main.js"></script>
 </body>
 </html>
