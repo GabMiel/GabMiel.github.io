@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GabMiel Website</title>
+  <title>Admin Panel — GabMiel Website</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>My Personal Chat Site</h1>
+  <h1>Admin Panel — My Personal Chat Site</h1>
 
-  <!-- Admin Topic Creation -->
+  <!-- Topic Creation -->
   <section>
-    <h2>Create Topic (Admin Only)</h2>
+    <h2>Create New Topic</h2>
     <input id="topicTitle" placeholder="Topic Title" />
     <textarea id="topicDesc" placeholder="Topic Description"></textarea>
     <input id="adminPass" type="password" placeholder="Admin Password" />
@@ -18,21 +18,18 @@
 
   <!-- Topic List -->
   <section>
-    <h2>Available Topics</h2>
+    <h2>View Topics & Messages</h2>
     <ul id="topicList"></ul>
   </section>
 
-  <!-- Chat Box -->
+  <!-- Message Viewer -->
   <section id="chatSection" style="display:none;">
-    <h2>Chat in: <span id="chatTopicTitle"></span></h2>
-    <input id="chatUsername" placeholder="Your Name" />
-    <textarea id="chatMessage" placeholder="Your Message"></textarea>
-    <button onclick="sendMessage()">Send Message</button>
-
-    <h3>Messages</h3>
+    <h2>Messages in: <span id="chatTopicTitle"></span></h2>
     <ul id="messageList"></ul>
   </section>
 
-  <script src="main.js"></script>
+  <p><a href="/">← Back to Landing Page</a></p>
+
+  <script src="admin.js"></script>
 </body>
 </html>
