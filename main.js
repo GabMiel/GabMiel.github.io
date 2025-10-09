@@ -1,3 +1,7 @@
+// Highlight active link
+document.getElementById(window.location.pathname === '/admin' ? 'adminLink' : 'homeLink')
+  .classList.add('active');
+
 let currentTopicId = null;
 
 async function createTopic() {
