@@ -1,6 +1,14 @@
-// Highlight active link
-document.getElementById(window.location.pathname === '/admin' ? 'adminLink' : 'homeLink')
-  .classList.add('active');
+document.addEventListener('DOMContentLoaded', () => {
+  initNavbar();
+  loadTopics();
+});
+
+function initNavbar() {
+  const path = window.location.pathname;
+  const activeId = path === '/admin' ? 'adminLink' : 'homeLink';
+  const activeLink = document.getElementById(activeId);
+  if (activeLink) activeLink.classList.add('active');
+}
 
 let currentTopicId = null;
 
@@ -71,5 +79,3 @@ async function loadMessages() {
     list.appendChild(li);
   });
 }
-
-loadTopics();
