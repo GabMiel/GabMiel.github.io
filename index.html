@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GabMiel Website</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    section { margin-bottom: 30px; }
+    input, textarea { width: 100%; margin: 5px 0; }
+    button { margin-top: 10px; }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>My Personal Chat Site</h1>
+
+  <section>
+    <h2>Create a Topic</h2>
+    <input type="text" id="topicTitle" placeholder="Title" disabled />
+    <textarea id="topicDesc" placeholder="Description" disabled></textarea>
+    <input type="password" id="adminPass" placeholder="Admin Password" disabled />
+    <button disabled>Create Topic</button>
+  </section>
+
+  <section>
+    <h2>Available Topics</h2>
+    <ul id="topicList">
+      <li>Topic loading disabled (JavaScript removed)</li>
+    </ul>
+  </section>
+
+  <section id="chatSection" style="display: block;">
+    <h2 id="chatTopicTitle">Chat</h2>
+    <input type="text" id="chatUsername" placeholder="Your name" disabled />
+    <textarea id="chatMessage" placeholder="Your message" disabled></textarea>
+    <button disabled>Send Message</button>
+    <ul id="messageList">
+      <li>Messages disabled (JavaScript removed)</li>
+    </ul>
+  </section>
+</body>
+</html>
