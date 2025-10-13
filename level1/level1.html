@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Level 1</title>
+  <link rel="stylesheet" href="level1.css" />
+</head>
+<body>
+  <h1 class="instruction">Click the correct shape to proceed to the next level</h1>
+  <div class="shape-container">
+    <div class="shape circle" data-correct="false"></div>
+    <div class="shape square" data-correct="false"></div>
+    <div class="shape rectangle" data-correct="false"></div>
+    <div class="shape heart" data-correct="false"></div>
+    <div class="shape star" data-correct="false"></div>
+    <div class="shape diamond" data-correct="true"></div>
+  </div>
+
+  <audio id="wrongSound" src="../assets/sounds/wrong.mp3" preload="auto"></audio>
+  <audio id="correctSound" src="../assets/sounds/correct.wav" preload="auto"></audio>
+
+  <script src="level1.js"></script>
+</body>
+</html>

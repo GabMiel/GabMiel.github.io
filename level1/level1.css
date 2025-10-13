@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: sans-serif;
+    background-image: url('https://picsum.photos/1920/1080');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+  }
+  
+  .instruction {
+    font-size: 24px;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  }
+  
+  .shape-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .shape {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: black;
+  }
+  
+  .shape:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Correct click animation */
+  .shape.correct-clicked {
+    animation: pulse 0.6s ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  /* Shape-specific styles */
+  .circle { border-radius: 50%; }
+  .square { /* default square */ }
+  .rectangle { width: 140px; height: 80px; }
+  
+  .heart {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Heart_corazón.svg/120px-Heart_corazón.svg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .star {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/120px-Five-pointed_star.svg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .diamond {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Diamond_shape.svg/120px-Diamond_shape.svg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  /* Random hover effect classes */
+  .hover-glow:hover {
+    box-shadow: 0 0 15px rgba(255,255,255,0.8);
+  }
+  
+  .hover-bright:hover {
+    filter: brightness(1.3);
+  }
+  
+  .hover-hue:hover {
+    filter: hue-rotate(45deg);
+  }
+  
+  .hover-shadow:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  }
+  
+  .hover-outline:hover {
+    outline: 3px solid white;
+    outline-offset: 4px;
+  }
