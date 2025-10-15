@@ -1,60 +1,96 @@
-body {
+/* Reset and base styles */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   height: 100vh;
-  background-image: url('https://picsum.photos/1920/1080'); /* Random placeholder */
+  background-image: url('assets/images/construction.webp'); /* Your custom background */
   background-size: cover;
   background-position: center;
+  font-family: 'Segoe UI', sans-serif;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: sans-serif;
-  animation: fadeIn 1s ease-in;
   position: relative;
   overflow: hidden;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-body::before {
-  content: "";
-  position: fixed;
+/* 🔍 Background opacity lives here */
+.overlay {
+  position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.3); /* subtle tint */
-  backdrop-filter: blur(2px);
-  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.6); /* Adjust for darkness */
+  z-index: 0;
 }
 
-.container {
+/* Container for both panels */
+.panel-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
   text-align: center;
+  padding: 40px;
+  max-width: 900px;
+  width: 95%;
 }
 
-.quote {
-  font-size: 28px;
+/* Shared panel styles */
+.panel {
+  background-color: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+/* Top panel: wider and taller */
+.title-panel {
+  width: 100%;
+  padding: 30px 40px;
+}
+
+.title-panel h1 {
+  font-size: 3rem;
+  color: #ffcc00;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  letter-spacing: 1.5px;
+}
+
+/* Bottom panel: spacious and readable */
+.detail-panel {
+  width: 100%;
+  padding: 40px;
+}
+
+.detail-panel p {
+  font-size: 1.3rem;
   color: white;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-  margin-bottom: 40px;
-  text-align: center;
-  padding: 0 20px;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
 }
 
-.play-button {
+/* Button styling with shadow and scale */
+.action-button {
   display: inline-block;
-  padding: 20px 40px;
-  font-size: 24px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.6);
-  border: none;
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 16px 40px;
   border-radius: 10px;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.5); /* ← Stronger button shadow */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.play-button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.action-button:hover {
+  background-color: #e6b800;
+  transform: scale(1.07);
 }

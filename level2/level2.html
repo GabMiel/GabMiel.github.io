@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Neon Button</title>
+<style>
+  body {
+    background: #001a0a;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Outer glowing container */
+  .outer-btn {
+    background-color: #a6ff00;          /* bright border */
+    border: none;
+    border-radius: 20px;                /* more rounded for larger button */
+    padding: 10px;                      /* thicker border area */
+    box-shadow: 0 0 25px #a6ff00;
+    position: relative;
+    cursor: pointer;
+    transition: 0.25s;
+    overflow: hidden;
+  }
+
+  /* Inner darker button */
+  .inner-btn {
+    background-color: #3ca43c;          /* inner dark color */
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-weight: bold;
+    font-size: 36px;                    /* larger text */
+    padding: 30px 100px;                /* more area inside */
+    text-shadow: 0 0 6px rgba(255,255,255,0.5);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    transition: 0.25s;
+  }
+
+  /* Hover glow */
+  .outer-btn:hover,
+  .outer-btn:hover .inner-btn {
+    box-shadow: 0 0 40px #a6ff00, inset 0 0 12px rgba(0,0,0,0.6);
+    transform: scale(1.05);
+  }
+
+  /* Press effect */
+  .outer-btn:active,
+  .outer-btn:active .inner-btn {
+    transform: scale(0.96);
+    box-shadow: 0 0 20px #a6ff00, inset 0 0 6px rgba(0,0,0,0.6);
+  }
+
+  /* Ripple effect */
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-effect 0.6s linear;
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  @keyframes ripple-effect {
+    to {
+      transform: scale(5);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="outer-btn">
+    <button class="inner-btn" id="practiceBtn">PRACTICE</button>
+  </div>
+
+  <script>
+    const button = document.getElementById('practiceBtn');
+
+    button.addEventListener('click', function(e) {
+      const ripple = document.createElement('span');
+      ripple.classList.add('ripple');
+      this.appendChild(ripple);
+
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+  </script>
+
+</body>
+</html>
