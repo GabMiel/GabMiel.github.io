@@ -5,12 +5,12 @@
   box-sizing: border-box;
 }
 
-/* ✅ Allow only vertical scrolling */
+/* ✅ Prevent horizontal scroll & enable vertical scroll */
 html, body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  overflow-y: auto;   /* Allow vertical scroll */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {
@@ -18,6 +18,7 @@ body {
   background-image: url('assets/images/construction.webp');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   font-family: 'Segoe UI', sans-serif;
   display: flex;
   justify-content: center;
@@ -27,7 +28,7 @@ body {
 
 /* Overlay for dimming */
 .overlay {
-  position: fixed; /* ✅ Changed to fixed to always cover viewport */
+  position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
@@ -192,18 +193,17 @@ body {
   }
 }
 
-/* 📱 Responsive Fixes */
-@media (max-width: 600px) {
-  .title-panel h1 {
-    font-size: 2.2rem;
-  }
-
-  .detail-panel p {
-    font-size: 1.1rem;
-  }
-
-  .pushable {
-    width: 180px;
-    height: 55px;
+/* 📱 Mobile Fade-to-Black Effect */
+@media (max-width: 768px) {
+  body::after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25vh;
+    background: linear-gradient(to bottom, transparent, black);
+    pointer-events: none;
+    z-index: 5;
   }
 }
