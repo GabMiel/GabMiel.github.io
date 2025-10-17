@@ -207,3 +207,14 @@ body {
     z-index: 5;
   }
 }
+/* Make background black only on small screens */
+@media (max-width: 768px) {
+  body {
+    background: #000 !important; /* solid black */
+    background-image: none !important; /* remove background image if any */
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.8); /* optional slight overlay effect */
+  }
+}
