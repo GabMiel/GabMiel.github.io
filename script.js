@@ -1,16 +1,37 @@
-const quotes = [
-    "Are you ready to dive into something unforgettable? The journey starts with a single click!",
-    "What if today is the beginning of your greatest adventure? Let’s find out together!",
-    "Step into a world where curiosity leads the way and surprises wait around every corner!",
-    "Why stay in the ordinary when the extraordinary is just one click away?",
-    "This is your moment - take the leap and see where it leads!",
-    "Every hero’s story begins with a choice. Will you press play?",
-    "Adventure doesn’t knock - it waits quietly behind the play button!",
-    "You’ve made it this far. What’s stopping you from going further?",
-    "The unknown is calling. Will you answer?",
-    "Let your imagination run wild and your courage take the lead!"
-  ];
-  
-  const quoteEl = document.getElementById("quote");
-  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-  quoteEl.textContent = randomQuote;
+const button = document.getElementById('sparkleButton');
+
+button.addEventListener('click', () => {
+  const screenW = window.innerWidth;
+  const screenH = window.innerHeight;
+
+  // Generate sparkles randomly anywhere
+  for (let i = 0; i < 50; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+
+    const hue = Math.random() * 360;
+    const size = 30 + Math.random() * 50;
+
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    particle.style.background = `radial-gradient(circle, hsl(${hue} 100% 75%) 0%, transparent 70%)`;
+
+    // Random position anywhere on screen
+    const x = Math.random() * screenW;
+    const y = Math.random() * screenH;
+    particle.style.left = `${x - size / 2}px`;
+    particle.style.top = `${y - size / 2}px`;
+
+    document.body.appendChild(particle);
+
+    particle.addEventListener('animationend', () => particle.remove());
+  }
+
+  // Delay navigation slightly so sparkles show first
+  setTimeout(() => {
+    window.open(
+      'https://www.figma.com/design/ycRRk8i4bmXqlBExN7GgFT/GITHUB-WEBSITE?node-id=0-1&t=lj3Tz19RK5boMy8K-1',
+      '_blank'
+    );
+  }, 1000);
+});
