@@ -207,14 +207,14 @@ body {
     z-index: 5;
   }
 }
-/* Make background black only on small screens */
+/* Mobile: fade bottom to black instead of full black */
 @media (max-width: 768px) {
   body {
-    background: #000 !important; /* solid black */
-    background-image: none !important; /* remove background image if any */
-  }
-
-  .overlay {
-    background: rgba(0, 0, 0, 0.8); /* optional slight overlay effect */
+    background: 
+      linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%),
+      url('assets/images/construction.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
